@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_donation",
+  "info": {
+    "displayName": "Donation",
+    "description": "A section encouraging users to donate, with donation info, support causes, and call-to-action buttons"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "sponsoredItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.sponsored-item"
+    },
+    "bankInfo": {
+      "type": "component",
+      "component": "ui.bank-info"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.button"
+    }
+  }
+}

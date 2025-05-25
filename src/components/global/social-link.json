@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_social_links",
+  "info": {
+    "displayName": "Social Link",
+    "description": "Link to a social media platform"
+  },
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": ["facebook", "youtube"],
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

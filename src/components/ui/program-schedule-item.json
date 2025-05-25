@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_program_schedule_items",
+  "info": {
+    "displayName": "Program schedule item"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string",
+      "required": true,
+      "displayName": "Thời gian"
+    },
+    "activity": {
+      "type": "string",
+      "required": true,
+      "displayName": "Hoạt động"
+    }
+  }
+}

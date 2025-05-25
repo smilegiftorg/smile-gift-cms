@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_mission_items",
+  "info": {
+    "displayName": "Mission Item"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

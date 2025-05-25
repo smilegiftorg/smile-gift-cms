@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_core_values",
+  "info": {
+    "displayName": "Core Value"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

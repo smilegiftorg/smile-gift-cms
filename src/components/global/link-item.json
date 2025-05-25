@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_link_items",
+  "info": {
+    "displayName": "Link Item",
+    "description": "A quick link in the footer"
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

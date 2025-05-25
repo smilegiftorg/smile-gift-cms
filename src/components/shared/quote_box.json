@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_quote_box",
+  "info": {
+    "displayName": "Quote Box",
+    "description": "Box chứa trích dẫn và người trích dẫn"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "attribution": {
+      "type": "string"
+    }
+  }
+}

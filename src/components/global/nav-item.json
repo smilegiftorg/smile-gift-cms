@@ -1,0 +1,18 @@
+{
+	"collectionName": "components_global_nav_items",
+	"info": {
+		"displayName": "Nav Item",
+		"description": "Navigation link item in the header"
+	},
+	"attributes": {
+		"name": {
+			"type": "string"
+		},
+		"nameEn": {
+			"type": "string"
+		},
+		"path": {
+			"type": "string"
+		}
+	}
+}

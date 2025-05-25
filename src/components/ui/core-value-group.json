@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_ui_core_value_group",
+  "info": {
+    "displayName": "Core value group",
+    "description": "Group of Core values with a title"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.core-value"
+    }
+  }
+}

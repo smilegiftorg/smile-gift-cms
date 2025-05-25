@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "volunteer_roles",
+  "info": {
+    "singularName": "volunteer-role",
+    "pluralName": "volunteer-roles",
+    "displayName": "Volunteer Role",
+    "description": "Các vai trò tình nguyện viên, có thể tái sử dụng ở nhiều chỗ"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "mainField": "title"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true,
+      "description": "Tên icon hoặc key icon (vd: FaUsers, FaGraduationCap...)"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

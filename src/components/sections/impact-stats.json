@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_impact_stats",
+  "info": {
+    "displayName": "Impact Stats Section",
+    "description": "Section displaying multiple impact statistics"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Tác động của chúng tôi"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.stat"
+    }
+  }
+}

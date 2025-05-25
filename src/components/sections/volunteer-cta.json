@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_volunteer_cta",
+  "info": {
+    "displayName": "Volunteer CTA",
+    "description": "Section kêu gọi tình nguyện viên"
+  },
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "richtext" },
+    "roles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::volunteer-role.volunteer-role"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.benefit"
+    },
+    "button": {
+      "type": "component",
+      "component": "ui.button"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sessions_header",
+  "info": {
+    "displayName": "Header",
+    "description": "Page header with background image and text"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

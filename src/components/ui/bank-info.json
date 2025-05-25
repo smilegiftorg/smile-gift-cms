@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_bank_info",
+  "info": {
+    "displayName": "Bank Info",
+    "description": "Bank donation details"
+  },
+  "attributes": {
+    "bankName": {
+      "type": "string"
+    },
+    "accountNumber": {
+      "type": "string"
+    },
+    "accountHolder": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_ui_program_results",
+  "info": {
+    "displayName": "Program Results",
+    "description": "Outcomes and metrics for completed programs"
+  },
+  "options": {},
+  "attributes": {
+    "volunteersParticipated": {
+      "type": "integer"
+    },
+    "beneficiaries": {
+      "type": "integer",
+      "description": "Number of people helped/supported"
+    },
+    "fundsRaised": {
+      "type": "string",
+      "description": "Amount of money raised (formatted with currency)"
+    },
+    "giftsDistributed": {
+      "type": "integer"
+    },
+    "mealsServed": {
+      "type": "integer"
+    },
+    "scholarshipsAwarded": {
+      "type": "integer"
+    },
+    "scholarshipAmount": {
+      "type": "string"
+    },
+    "attendees": {
+      "type": "integer",
+      "description": "Number of people who attended the event"
+    },
+    "foodServings": {
+      "type": "integer"
+    },
+    "fundsUsed": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_team_member",
+  "info": {
+    "displayName": "Team Member",
+    "description": "Thành viên trong đội ngũ"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false,
+      "required": true
+    },
+    "facebookUrl": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

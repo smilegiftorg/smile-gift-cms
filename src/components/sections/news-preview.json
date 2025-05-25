@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_sections_news_preview",
+  "info": {
+    "displayName": "News Preview",
+    "description": "Section hiển thị các bài viết tin tức & hoạt động mới nhất"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "newsItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "viewAllButton": {
+      "type": "component",
+      "component": "ui.button"
+    }
+  }
+}

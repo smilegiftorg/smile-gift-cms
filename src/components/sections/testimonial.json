@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_testimonials_section",
+  "info": {
+    "displayName": "Testimonials Section",
+    "description": "Một section hiển thị danh sách testimonials"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Câu chuyện từ cộng đồng"
+    },
+    "description": {
+      "type": "text",
+      "default": "Những chia sẻ chân thành từ các tình nguyện viên, mạnh thường quân và người thụ hưởng."
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    }
+  }
+}

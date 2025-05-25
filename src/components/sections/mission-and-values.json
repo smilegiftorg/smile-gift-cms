@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_sections_mission_and_values",
+  "info": {
+    "displayName": "Mission and Values",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "missionItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.mission-item"
+    },
+    "coreValues": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.core-value"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    }
+  }
+}

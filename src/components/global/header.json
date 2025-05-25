@@ -1,0 +1,32 @@
+{
+	"collectionName": "components_global_headers",
+	"info": {
+		"displayName": "Header",
+		"description": "Global header navigation with logo, links, and contact button"
+	},
+	"attributes": {
+		"logo": {
+			"type": "media",
+			"multiple": false,
+			"required": true,
+			"allowedTypes": ["images"]
+		},
+		"title": {
+			"type": "string"
+		},
+		"subtitle": {
+			"type": "string"
+		},
+		"navItems": {
+			"type": "component",
+			"repeatable": true,
+			"component": "global.nav-item"
+		},
+		"contactLabel": {
+			"type": "string"
+		},
+		"contactPath": {
+			"type": "string"
+		}
+	}
+}

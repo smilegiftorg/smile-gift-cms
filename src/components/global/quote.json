@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_quotes",
+  "info": {
+    "displayName": "Quote",
+    "description": "Inspirational quote or slogan"
+  },
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}

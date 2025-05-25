@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Home Page",
+    "description": "Home page content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.hero",
+        "sections.about-preview",
+        "sections.impact-stats",
+        "sections.featured-programs",
+        "sections.gallery-preview",
+        "sections.testimonial",
+        "sections.news-preview",
+        "sections.volunteer-cta",
+        "sections.donation",
+        "shared.seo"
+      ],
+      "required": false
+    }
+  }
+}

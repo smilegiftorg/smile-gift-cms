@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_sections_program_hero",
+  "info": {
+    "displayName": "Program Hero",
+    "description": "Phần hero đầu trang chương trình"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "required": true,
+      "multiple": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["upcoming", "completed"],
+      "default": "upcoming"
+    },
+    "date": {
+      "type": "date"
+    },
+    "location": {
+      "type": "string"
+    },
+    "maxAttendees": {
+      "type": "integer"
+    },
+    "beneficiaries": {
+      "type": "integer",
+      "description": "Số người được hỗ trợ (nếu đã hoàn thành)"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.button"
+    }
+  }
+}

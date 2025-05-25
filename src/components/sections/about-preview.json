@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_sections_about_preview",
+  "info": {
+    "displayName": "About Preview",
+    "description": "Section preview about with title, description, quote, core values, button, image, and stats"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "coreValue": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.core-value-group"
+    },
+    "button": {
+      "type": "component",
+      "component": "ui.button"
+    },
+    "image": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "stat": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.stat-group"
+    }
+  }
+}

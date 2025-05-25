@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_ui_button",
+  "info": {
+    "displayName": "Button",
+    "description": "Button with text, link, variant and icon"
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": ["primary", "secondary", "outline"]
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}
