@@ -26,7 +26,13 @@
         "sections.header",
         "sections.our-story",
         "sections.mission-and-values",
-        "sections.team"
+        "sections.team",
+        "sections.join-us-cta",
+        "sections.financial-summary",
+        "sections.donation-impact",
+        "ui.bank-info",
+        "sections.transparency",
+        "sections.contact-section"
       ]
     },
     "seo": {

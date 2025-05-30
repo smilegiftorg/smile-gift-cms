@@ -37,6 +37,12 @@
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "category"
+    },
+    "volunteers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::volunteer.volunteer",
+      "mappedBy": "category"
     }
   }
 }

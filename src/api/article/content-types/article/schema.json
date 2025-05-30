@@ -17,13 +17,18 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
     },
     "author": {
       "type": "string"
@@ -38,6 +43,29 @@
       "type": "text",
       "required": true,
       "displayName": "Mô tả ngắn"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "upcoming",
+        "completed"
+      ],
+      "required": true
+    },
+    "longDescription": {
+      "type": "richtext",
+      "required": true,
+      "displayName": "Mô tả chi tiết"
+    },
+    "relatedArticles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

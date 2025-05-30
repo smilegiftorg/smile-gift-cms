@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_transparencies",
+  "info": {
+    "displayName": "transparency",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

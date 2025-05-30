@@ -85,6 +85,130 @@ export interface GlobalSocialLink extends Schema.Component {
   };
 }
 
+export interface ProgramResults extends Schema.Component {
+  collectionName: 'components_program_results';
+  info: {
+    description: 'Th\u00E0nh ph\u1EA7n l\u01B0u tr\u1EEF c\u00E1c k\u1EBFt qu\u1EA3 \u0111\u1ECBnh l\u01B0\u1EE3ng c\u1EE7a ch\u01B0\u01A1ng tr\u00ECnh';
+    displayName: 'Results';
+    icon: 'check-circle';
+  };
+  attributes: {
+    attendees: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    beneficiaries: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    fundsRaised: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    giftsDistributed: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    mealsServed: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    scholarshipAmount: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    scholarshipsAwarded: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    volunteersParticipated: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+  };
+}
+
+export interface ProgramScheduleItem extends Schema.Component {
+  collectionName: 'components_program_schedule_items';
+  info: {
+    displayName: 'Schedule Item';
+    icon: 'clock';
+  };
+  attributes: {
+    activity: Attribute.Text & Attribute.Required;
+    time: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface ProgramSchedules extends Schema.Component {
+  collectionName: 'components_program_schedules';
+  info: {
+    displayName: 'Schedule Items';
+    icon: 'clock';
+  };
+  attributes: {
+    schedules: Attribute.Component<'program.schedule-item', true>;
+  };
+}
+
 export interface SectionsAboutPreview extends Schema.Component {
   collectionName: 'components_sections_about_preview';
   info: {
@@ -98,6 +222,18 @@ export interface SectionsAboutPreview extends Schema.Component {
     image: Attribute.Media<'images'>;
     quote: Attribute.Text;
     stat: Attribute.Component<'ui.stat-group'>;
+    title: Attribute.String;
+  };
+}
+
+export interface SectionsContactSection extends Schema.Component {
+  collectionName: 'components_sections_contact_sections';
+  info: {
+    displayName: 'contact section';
+  };
+  attributes: {
+    buttons: Attribute.Component<'ui.button', true>;
+    subTitle: Attribute.String;
     title: Attribute.String;
   };
 }
@@ -117,6 +253,19 @@ export interface SectionsDonation extends Schema.Component {
   };
 }
 
+export interface SectionsDonationImpact extends Schema.Component {
+  collectionName: 'components_sections_donation_impact';
+  info: {
+    description: 'Hi\u1EC3n th\u1ECB t\u00E1c \u0111\u1ED9ng c\u1EE5 th\u1EC3 c\u1EE7a c\u00E1c kho\u1EA3n quy\u00EAn g\u00F3p';
+    displayName: 'Donation Impact';
+  };
+  attributes: {
+    impacts: Attribute.Component<'shared.donation-impact-card', true>;
+    title: Attribute.String &
+      Attribute.DefaultTo<'\u0110\u00F3ng g\u00F3p c\u1EE7a b\u1EA1n s\u1EBD t\u1EA1o n\u00EAn s\u1EF1 kh\u00E1c bi\u1EC7t'>;
+  };
+}
+
 export interface SectionsFeaturedPrograms extends Schema.Component {
   collectionName: 'components_sections_featured_programs';
   info: {
@@ -132,6 +281,19 @@ export interface SectionsFeaturedPrograms extends Schema.Component {
     >;
     title: Attribute.String;
     viewAllButton: Attribute.Component<'ui.button'>;
+  };
+}
+
+export interface SectionsFinancialSummary extends Schema.Component {
+  collectionName: 'components_sections_financial_summary';
+  info: {
+    description: 'T\u1ED5ng quan t\u00E0i ch\u00EDnh v\u1EDBi c\u00E1c ch\u1EC9 s\u1ED1 nh\u01B0 t\u1ED5ng quy\u00EAn g\u00F3p, s\u1ED1 d\u1EF1 \u00E1n, chi ph\u00ED ho\u1EA1t \u0111\u1ED9ng';
+    displayName: 'Financial Summary';
+  };
+  attributes: {
+    items: Attribute.Component<'shared.financial-card', true>;
+    title: Attribute.String &
+      Attribute.DefaultTo<'T\u1ED5ng quan t\u00E0i ch\u00EDnh'>;
   };
 }
 
@@ -276,6 +438,16 @@ export interface SectionsProgramHero extends Schema.Component {
   };
 }
 
+export interface SectionsRichContent extends Schema.Component {
+  collectionName: 'components_sections_rich_contents';
+  info: {
+    displayName: 'RichContent';
+  };
+  attributes: {
+    content: Attribute.Blocks;
+  };
+}
+
 export interface SectionsTeam extends Schema.Component {
   collectionName: 'components_sections_team_section';
   info: {
@@ -308,6 +480,18 @@ export interface SectionsTestimonial extends Schema.Component {
   };
 }
 
+export interface SectionsTransparency extends Schema.Component {
+  collectionName: 'components_sections_transparencies';
+  info: {
+    description: '';
+    displayName: 'transparency';
+  };
+  attributes: {
+    button: Attribute.Component<'ui.button'>;
+    content: Attribute.RichText;
+  };
+}
+
 export interface SectionsVolunteerCta extends Schema.Component {
   collectionName: 'components_sections_volunteer_cta';
   info: {
@@ -336,6 +520,34 @@ export interface SharedCoreValue extends Schema.Component {
     description: Attribute.Text;
     icon: Attribute.String;
     title: Attribute.String;
+  };
+}
+
+export interface SharedDonationImpactCard extends Schema.Component {
+  collectionName: 'components_elements_donation_impact_card';
+  info: {
+    description: 'M\u1ED9t th\u1EBB th\u1EC3 hi\u1EC7n gi\u00E1 tr\u1ECB quy\u00EAn g\u00F3p v\u00E0 t\u00E1c \u0111\u1ED9ng c\u1EE7a n\u00F3';
+    displayName: 'Donation Impact Card';
+  };
+  attributes: {
+    amount: Attribute.String;
+    icon: Attribute.String & Attribute.DefaultTo<'FaHandHoldingHeart'>;
+    impact: Attribute.Text;
+  };
+}
+
+export interface SharedFinancialCard extends Schema.Component {
+  collectionName: 'components_shared_financial_card';
+  info: {
+    description: 'Th\u1EBB hi\u1EC3n th\u1ECB m\u1ED9t ch\u1EC9 s\u1ED1 t\u00E0i ch\u00EDnh c\u1EE5 th\u1EC3';
+    displayName: 'Financial Card';
+  };
+  attributes: {
+    icon: Attribute.String;
+    subtitle: Attribute.String;
+    theme: Attribute.Enumeration<['primary', 'secondary', 'accent']>;
+    title: Attribute.String;
+    value: Attribute.String;
   };
 }
 
@@ -581,9 +793,15 @@ declare module '@strapi/types' {
       'global.nav-item': GlobalNavItem;
       'global.quote': GlobalQuote;
       'global.social-link': GlobalSocialLink;
+      'program.results': ProgramResults;
+      'program.schedule-item': ProgramScheduleItem;
+      'program.schedules': ProgramSchedules;
       'sections.about-preview': SectionsAboutPreview;
+      'sections.contact-section': SectionsContactSection;
       'sections.donation': SectionsDonation;
+      'sections.donation-impact': SectionsDonationImpact;
       'sections.featured-programs': SectionsFeaturedPrograms;
+      'sections.financial-summary': SectionsFinancialSummary;
       'sections.gallery-preview': SectionsGalleryPreview;
       'sections.header': SectionsHeader;
       'sections.hero': SectionsHero;
@@ -593,10 +811,14 @@ declare module '@strapi/types' {
       'sections.news-preview': SectionsNewsPreview;
       'sections.our-story': SectionsOurStory;
       'sections.program-hero': SectionsProgramHero;
+      'sections.rich-content': SectionsRichContent;
       'sections.team': SectionsTeam;
       'sections.testimonial': SectionsTestimonial;
+      'sections.transparency': SectionsTransparency;
       'sections.volunteer-cta': SectionsVolunteerCta;
       'shared.core-value': SharedCoreValue;
+      'shared.donation-impact-card': SharedDonationImpactCard;
+      'shared.financial-card': SharedFinancialCard;
       'shared.meta-social': SharedMetaSocial;
       'shared.mission-item': SharedMissionItem;
       'shared.quote_box': SharedQuoteBox;

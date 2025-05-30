@@ -389,8 +389,17 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media<'images' | 'files' | 'videos'>;
+    longDescription: Attribute.RichText & Attribute.Required;
     publishedAt: Attribute.DateTime;
-    slug: Attribute.UID<'api::article.article', 'title'>;
+    relatedArticles: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article.article'
+    >;
+    seo: Attribute.Component<'shared.seo'>;
+    slug: Attribute.UID<'api::article.article', 'title'> & Attribute.Required;
+    status: Attribute.Enumeration<['upcoming', 'completed']> &
+      Attribute.Required;
     title: Attribute.String & Attribute.Required;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
@@ -445,6 +454,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    volunteers: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::volunteer.volunteer'
+    >;
   };
 }
 
@@ -582,7 +596,13 @@ export interface ApiPagePage extends Schema.CollectionType {
         'sections.header',
         'sections.our-story',
         'sections.mission-and-values',
-        'sections.team'
+        'sections.team',
+        'sections.join-us-cta',
+        'sections.financial-summary',
+        'sections.donation-impact',
+        'ui.bank-info',
+        'sections.transparency',
+        'sections.contact-section'
       ]
     >;
     slug: Attribute.UID<'api::page.page', 'title'>;
@@ -640,6 +660,11 @@ export interface ApiProgramProgram extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
     category: Attribute.Relation<
       'api::program.program',
@@ -653,18 +678,150 @@ export interface ApiProgramProgram extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    date: Attribute.Date & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
-    image: Attribute.Media<'images' | 'files' | 'videos'>;
-    location: Attribute.String & Attribute.Required;
+    date: Attribute.Date &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    gallery: Attribute.Media<'images', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Attribute.String;
+    localizations: Attribute.Relation<
+      'api::program.program',
+      'oneToMany',
+      'api::program.program'
+    >;
+    location: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    longDescription: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    maxAttendees: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    priority: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+          min: 1;
+        },
+        number
+      > &
+      Attribute.DefaultTo<2>;
     publishedAt: Attribute.DateTime;
-    slug: Attribute.UID<'api::program.program', 'title'>;
+    relatedPrograms: Attribute.Relation<
+      'api::program.program',
+      'oneToMany',
+      'api::program.program'
+    >;
+    sections: Attribute.DynamicZone<['program.schedules', 'program.results']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID<'api::program.program', 'title'> & Attribute.Required;
     status: Attribute.Enumeration<['upcoming', 'completed']> &
-      Attribute.Required;
-    title: Attribute.String & Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::program.program',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiReportReport extends Schema.CollectionType {
+  collectionName: 'reports';
+  info: {
+    description: '';
+    displayName: 'Report';
+    pluralName: 'reports';
+    singularName: 'report';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::report.report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    description: Attribute.Text;
+    link: Attribute.Text;
+    publishedAt: Attribute.DateTime;
+    reportDate: Attribute.Date;
+    title: Attribute.String;
+    type: Attribute.Enumeration<['quarterly', 'annual']>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::report.report',
       'oneToOne',
       'admin::user'
     > &
@@ -731,6 +888,48 @@ export interface ApiVolunteerRoleVolunteerRole extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::volunteer-role.volunteer-role',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVolunteerVolunteer extends Schema.CollectionType {
+  collectionName: 'volunteers';
+  info: {
+    description: '';
+    displayName: 'volunteer';
+    pluralName: 'volunteers';
+    singularName: 'volunteer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Attribute.Relation<
+      'api::volunteer.volunteer',
+      'manyToOne',
+      'api::category.category'
+    >;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::volunteer.volunteer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    deadline: Attribute.Date;
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    postions: Attribute.Integer;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::volunteer.volunteer', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::volunteer.volunteer',
       'oneToOne',
       'admin::user'
     > &
@@ -1182,8 +1381,10 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::program-page.program-page': ApiProgramPageProgramPage;
       'api::program.program': ApiProgramProgram;
+      'api::report.report': ApiReportReport;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::volunteer-role.volunteer-role': ApiVolunteerRoleVolunteerRole;
+      'api::volunteer.volunteer': ApiVolunteerVolunteer;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

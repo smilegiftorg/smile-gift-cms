@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_program_schedules",
+  "info": {
+    "displayName": "Schedule Items",
+    "icon": "clock"
+  },
+  "attributes": {
+    "schedules": {
+      "type": "component",
+      "repeatable": true,
+      "component": "program.schedule-item"
+    }
+  }
+}

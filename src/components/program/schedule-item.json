@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_program_schedule_items",
+  "info": {
+    "displayName": "Schedule Item",
+    "icon": "clock"
+  },
+  "attributes": {
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "activity": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

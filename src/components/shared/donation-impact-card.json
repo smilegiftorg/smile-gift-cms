@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_donation_impact_card",
+  "info": {
+    "displayName": "Donation Impact Card",
+    "description": "Một thẻ thể hiện giá trị quyên góp và tác động của nó"
+  },
+  "attributes": {
+    "amount": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "string",
+      "default": "FaHandHoldingHeart"
+    }
+  }
+}
