@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_donation_impact",
+  "info": {
+    "displayName": "Donation Impact",
+    "description": "Hiển thị tác động cụ thể của các khoản quyên góp"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Đóng góp của bạn sẽ tạo nên sự khác biệt"
+    },
+    "impacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.donation-impact-card"
+    }
+  }
+}

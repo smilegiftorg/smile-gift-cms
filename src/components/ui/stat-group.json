@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_ui_stat_group",
+  "info": {
+    "displayName": "Stat Group",
+    "description": "Group of stats with a title"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.stat"
+    }
+  }
+}

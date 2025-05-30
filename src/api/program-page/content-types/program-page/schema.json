@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "program_pages",
+  "info": {
+    "singularName": "program-page",
+    "pluralName": "program-pages",
+    "displayName": "Program Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": ["sections.header", "sections.join-us-cta"]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

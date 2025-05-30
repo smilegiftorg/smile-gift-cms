@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_join_us_cta",
+  "info": {
+    "displayName": "Join Us CTA",
+    "description": "Kêu gọi người dùng tham gia cùng tổ chức hoặc ủng hộ hoạt động"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.button"
+    }
+  }
+}

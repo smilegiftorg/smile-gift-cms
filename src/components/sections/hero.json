@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_hero",
+  "info": {
+    "displayName": "Hero",
+    "description": "Hero section with title, subtitle, description, background image and buttons"
+  },
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.button"
+    }
+  }
+}

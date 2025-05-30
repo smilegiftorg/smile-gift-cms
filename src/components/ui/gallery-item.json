@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_ui_gallery_item",
+  "info": {
+    "displayName": "Gallery Item",
+    "description": "A single gallery item with image, title and date"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

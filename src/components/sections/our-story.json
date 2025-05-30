@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sections_our_story",
+  "info": {
+    "displayName": "Our Story",
+    "description": "Section giới thiệu câu chuyện của Smile Gift với nội dung, hình ảnh và trích dẫn"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "highlightBox": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.quote_box"
+    },
+    "mainImage": {
+      "type": "media",
+      "allowedTypes": ["images"],
+      "multiple": false
+    },
+    "quoteBox": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.quote_box"
+    }
+  }
+}

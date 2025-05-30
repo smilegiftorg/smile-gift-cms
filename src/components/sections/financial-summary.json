@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_financial_summary",
+  "info": {
+    "displayName": "Financial Summary",
+    "description": "Tổng quan tài chính với các chỉ số như tổng quyên góp, số dự án, chi phí hoạt động"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Tổng quan tài chính"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.financial-card"
+    }
+  }
+}

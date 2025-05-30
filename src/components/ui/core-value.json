@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ui_core_value",
+  "info": {
+    "displayName": "Core Value",
+    "description": "A core value text"
+  },
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}

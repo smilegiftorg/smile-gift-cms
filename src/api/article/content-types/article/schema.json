@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": "Danh sách các bài viết tin tức"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "author": {
+      "type": "string"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "description": {
+      "type": "text",
+      "required": true,
+      "displayName": "Mô tả ngắn"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "upcoming",
+        "completed"
+      ],
+      "required": true
+    },
+    "longDescription": {
+      "type": "richtext",
+      "required": true,
+      "displayName": "Mô tả chi tiết"
+    },
+    "relatedArticles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

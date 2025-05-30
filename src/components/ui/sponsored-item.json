@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ui_sponsored_item",
+  "info": {
+    "displayName": "Cause Item",
+    "description": "Item representing a cause being supported"
+  },
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

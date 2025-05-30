@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "programs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program",
+      "mappedBy": "category"
+    },
+    "galleries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::program.program",
+      "mappedBy": "category"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "category"
+    },
+    "volunteers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::volunteer.volunteer",
+      "mappedBy": "category"
+    }
+  }
+}

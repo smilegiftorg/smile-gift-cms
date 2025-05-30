@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ui_benefit",
+  "info": {
+    "displayName": "Benefit",
+    "description": "Lợi ích khi tham gia tình nguyện"
+  },
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

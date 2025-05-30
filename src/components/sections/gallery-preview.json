@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_gallery_preview",
+  "info": {
+    "displayName": "Gallery Preview Section",
+    "description": "Section displaying a preview of gallery items"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Khoảnh khắc từ trái tim"
+    },
+    "description": {
+      "type": "text",
+      "default": "Mỗi hình ảnh là một câu chuyện, mỗi khoảnh khắc đều chứa đựng tình người và sự sẻ chia."
+    },
+    "galleryItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gallery.gallery"
+    },
+    "viewAllButton": {
+      "type": "component",
+      "component": "ui.button"
+    }
+  }
+}

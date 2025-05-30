@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_team_section",
+  "info": {
+    "displayName": "Team Section",
+    "description": "Section hiển thị đội ngũ của CLB với ảnh, tên, chức vụ và liên kết mạng xã hội"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.team-member"
+    }
+  }
+}

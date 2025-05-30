@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_financial_card",
+  "info": {
+    "displayName": "Financial Card",
+    "description": "Thẻ hiển thị một chỉ số tài chính cụ thể"
+  },
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": ["primary", "secondary", "accent"]
+    }
+  }
+}

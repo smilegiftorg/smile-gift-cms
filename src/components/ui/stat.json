@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_ui_stat",
+  "info": {
+    "displayName": "Stat",
+    "description": "Single impact statistic with icon, value, unit, description"
+  },
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "description": "Icon name, e.g. 'FaUsers', 'FaHands'"
+    },
+    "value": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_global_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": "Global footer with about, quick links, contact info, quote, and social links"
+  },
+  "attributes": {
+    "aboutTitle": {
+      "type": "string"
+    },
+    "aboutDescription": {
+      "type": "text"
+    },
+    "quickLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.link-item"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactLocation": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "component",
+      "component": "global.quote"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.social-link"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

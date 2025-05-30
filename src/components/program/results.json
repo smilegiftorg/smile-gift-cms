@@ -1,0 +1,130 @@
+{
+  "collectionName": "components_program_results",
+  "info": {
+    "displayName": "Results",
+    "icon": "check-circle",
+    "description": "Thành phần lưu trữ các kết quả định lượng của chương trình"
+  },
+  "attributes": {
+    "volunteersParticipated": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Volunteers Participated",
+        "vi": "Số tình nguyện viên tham gia"
+      },
+      "description": "Nhập số lượng tình nguyện viên tham gia chương trình"
+    },
+    "beneficiaries": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Beneficiaries",
+        "vi": "Số người được hỗ trợ"
+      },
+      "description": "Nhập số lượng người nhận được hỗ trợ từ chương trình"
+    },
+    "fundsRaised": {
+      "type": "string",
+      "maxLength": 50,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Funds Raised",
+        "vi": "Số tiền quyên góp"
+      },
+      "description": "Nhập tổng số tiền quyên góp (ví dụ: 1,000,000 VNĐ)"
+    },
+    "giftsDistributed": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Gifts Distributed",
+        "vi": "Số phần quà đã phát"
+      },
+      "description": "Nhập số lượng phần quà đã được phân phát"
+    },
+    "mealsServed": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Meals Served",
+        "vi": "Số suất ăn đã phục vụ"
+      },
+      "description": "Nhập số lượng suất ăn đã được cung cấp"
+    },
+    "scholarshipsAwarded": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Scholarships Awarded",
+        "vi": "Số suất học bổng"
+      },
+      "description": "Nhập số lượng học bổng đã được trao"
+    },
+    "scholarshipAmount": {
+      "type": "string",
+      "maxLength": 50,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Scholarship Amount",
+        "vi": "Giá trị mỗi suất học bổng"
+      },
+      "description": "Nhập giá trị tiền tệ của mỗi suất học bổng (ví dụ: 2,000,000 VNĐ)"
+    },
+    "attendees": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "label": {
+        "en": "Number of Attendees",
+        "vi": "Số người tham dự"
+      },
+      "description": "Nhập tổng số người tham dự sự kiện hoặc chương trình"
+    }
+  }
+}
