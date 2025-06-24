@@ -925,6 +925,8 @@ export interface ApiVolunteerVolunteer extends Schema.CollectionType {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     postions: Attribute.Integer;
     publishedAt: Attribute.DateTime;
+    registerButton: Attribute.Component<'ui.button'>;
+    seo: Attribute.Component<'shared.seo'>;
     slug: Attribute.UID<'api::volunteer.volunteer', 'title'>;
     title: Attribute.String;
     updatedAt: Attribute.DateTime;

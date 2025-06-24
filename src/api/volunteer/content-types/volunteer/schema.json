@@ -22,7 +22,12 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "postions": {
       "type": "integer"
@@ -42,6 +47,16 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "registerButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
     }
   }
 }

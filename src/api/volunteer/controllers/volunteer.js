@@ -16,6 +16,7 @@ module.exports = createCoreController(
         image: true,
         gallery: true,
         category: true,
+        registerButton: true,
       };
       if (seo) {
         populateFields = {
