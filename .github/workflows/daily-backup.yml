@@ -1,37 +1,40 @@
-name: Daily Backup
+name: Backup PostgreSQL
 
 on:
-  schedule:
-    - cron: "0 2 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *" # Every day at 2:00 AM
 
 jobs:
   backup:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Postgres 18 client
+      - name: Set timestamp
+        run: |
+          echo "NOW=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
+
+      - name: Install PostgreSQL client 18
         run: |
           sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
           wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
           sudo apt-get install -y postgresql-client-18
 
-      - name: Dump DB
-        env:
-          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+      - name: Dump PostgreSQL
         run: |
           pg_dump \
             -h ${{ secrets.DB_HOST }} \
-            -U ${{ secrets.DB_USER }} \
             -p ${{ secrets.DB_PORT }} \
+            -U ${{ secrets.DB_USER }} \
             -d ${{ secrets.DB_NAME }} \
-            -F c \
-            -f backup.dump
+            -Fc \
+            -f backup_${{ env.NOW }}.dump
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
 
-      - name: Upload artifact
+      - name: Upload backup
         uses: actions/upload-artifact@v4
         with:
-          name: postgres-backup
-          path: backup.dump
-          retention-days: 7
+          name: backup-${{ env.NOW }}
+          path: backup_${{ env.NOW }}.dump
