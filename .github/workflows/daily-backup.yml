@@ -1,0 +1,33 @@
+name: Daily Backup
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Postgres client
+        run: sudo apt-get install -y postgresql-client
+
+      - name: Dump DB
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+        run: |
+          pg_dump \
+            -h ${{ secrets.DB_HOST }} \
+            -U ${{ secrets.DB_USER }} \
+            -p ${{ secrets.DB_PORT }} \
+            -d ${{ secrets.DB_NAME }} \
+            -F c \
+            -f backup.dump
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: postgres-backup
+          path: backup.dump
+          retention-days: 7
