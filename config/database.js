@@ -1,13 +1,15 @@
-module.exports = ({ env }) => {
-  console.log("ALL ENV:", process.env);
-
-  return {
+module.exports = ({ env }) => ({
+  connection: {
+    client: "postgres",
     connection: {
-      client: "postgres",
-      connection: env("DATABASE_URL"),
+      host: env("DATABASE_HOST"),
+      port: env.int("DATABASE_PORT"),
+      database: env("DATABASE_NAME"),
+      user: env("DATABASE_USERNAME"),
+      password: env("DATABASE_PASSWORD"),
       ssl: {
         rejectUnauthorized: false,
       },
     },
-  };
-};
+  },
+});
